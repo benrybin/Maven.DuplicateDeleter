@@ -13,12 +13,13 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
 
     @Override
     public Integer[] removeDuplicates(int maxNumberOfDuplications) {
+        Integer[] array = origional.clone();
         Integer[] temp = new Integer[100];
         Integer counter2=0;
         Arrays.fill(temp,0);
         Integer counter =0;
-        for (int i = 0; i <super.array.length; i++) {
-            temp[super.array[i]]++;
+        for (int i = 0; i <array.length; i++) {
+            temp[array[i]]++;
 
 
             }
@@ -30,10 +31,10 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
 
         }
         Integer[] answer = new Integer[counter];
-        for (int i = 0; i <super.array.length ; i++) {
-            if(temp[super.array[i]]<maxNumberOfDuplications){
+        for (int i = 0; i <array.length ; i++) {
+            if(temp[array[i]]<maxNumberOfDuplications){
 
-                answer[counter2++] = super.array[i];
+                answer[counter2++] = array[i];
 
             }
 
@@ -47,12 +48,13 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
 
     @Override
     public Integer[] removeDuplicatesExactly(int exactNumberOfDuplications) {
+        Integer[] array = origional.clone();
         Integer[] temp = new Integer[100];
         Integer counter2=0;
         Arrays.fill(temp,0);
         Integer counter =0;
-        for (int i = 0; i <super.array.length; i++) {
-            temp[super.array[i]]++;
+        for (int i = 0; i <array.length; i++) {
+            temp[array[i]]++;
 
 
         }
@@ -64,10 +66,10 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
 
         }
         Integer[] answer = new Integer[counter];
-        for (int i = 0; i <super.array.length ; i++) {
-            if(!(temp[super.array[i]] == exactNumberOfDuplications)){
+        for (int i = 0; i <array.length ; i++) {
+            if(!(temp[array[i]] == exactNumberOfDuplications)){
 
-                answer[counter2++] = super.array[i];
+                answer[counter2++] = array[i];
 
             }
 

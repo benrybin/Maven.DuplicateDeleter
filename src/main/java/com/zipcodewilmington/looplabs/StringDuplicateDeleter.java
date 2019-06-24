@@ -13,14 +13,14 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
 
     @Override
     public String[] removeDuplicates(int maxNumberOfDuplications) {
-
+        String[] array = origional.clone();
         Integer currentCount =1;
         Integer counter =0;
         String dups = "";
         if(maxNumberOfDuplications<2){
             return new String[0];
-        }
-        for (int i = 0; i <super.array.length ; i++) {
+       }
+        for (int i = 0; i <array.length ; i++) {
             currentCount =0;
             counter=0;
 
@@ -55,6 +55,7 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
         for (int i = 0; i <array.length ; i++) {
             if(!(array[i].equals("blank"))){
                 temp[counter2] = array[i];
+                counter2++;
             }
 
         }
@@ -68,6 +69,7 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
         Integer counter =0;
         String test ="";
         Integer dupCount =0;
+        String[] array = origional.clone();
         for (int i = 0; i <array.length ; i++) {
            test = array[i];
            dupCount=0;
@@ -102,8 +104,8 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
             }
 
         }
-        array = new String[answer.length];
-        array[1] = "Yes";
+        //array = new String[answer.length];
+       // array[1] = "Yes";
 
         return answer;
     }
